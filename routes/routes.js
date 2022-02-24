@@ -1,10 +1,14 @@
 const express = require('express');
+
+const { database, mongoose } = require('../src/db');
+
 const Model = require('../models/model');
 
 const router = express.Router();
 
 //Post Method
 router.post('/post', (req, res) => {
+  database.db.collection('model').insertOne(req.body, (err, result) => {})
   res.send('Post API')
 })
 
